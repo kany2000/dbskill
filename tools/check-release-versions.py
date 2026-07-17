@@ -21,7 +21,7 @@ if metadata_version != version:
     )
 
 badge_version = re.search(
-    r"https://img\.shields\.io/badge/version-([0-9.]+)-111111\.svg", readme
+    r"https://img\.shields\.io/badge/version-([0-9.]+)-[A-Fa-f0-9]{6}\.svg(?:\?[^)]*)?", readme
 )
 if badge_version is None:
     errors.append("README 未找到 Version Badge")

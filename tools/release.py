@@ -39,7 +39,7 @@ def prepare(version: str) -> None:
     readme = readme_path.read_text(encoding="utf-8")
     readme = replace_once(
         readme,
-        r"(https://img\.shields\.io/badge/version-)[0-9.]+(-111111\.svg)",
+        r"(https://img\.shields\.io/badge/version-)[0-9.]+(-[A-Fa-f0-9]{6}\.svg(?:\?[^)]*)?)",
         rf"\g<1>{version}\g<2>",
         "README Version Badge",
     )
